@@ -83,11 +83,11 @@ function filterJobs(type) {
 }
 
 // ================== UPDATE COUNTS ==================
-// function updateCounts() {
-//   const cards = document.querySelectorAll("#jobs-list > div");
+function updateCounts() {
+  const cards = document.querySelectorAll("#jobs-list > div");
 
-//   let interviewCount = 0;
-//   let rejectedCount = 0;
+  let interviewCount = 0;
+  let rejectedCount = 0;
 
   cards.forEach(card => {
     if (card.dataset.status === "interview") interviewCount++;
