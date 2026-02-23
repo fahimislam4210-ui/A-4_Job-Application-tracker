@@ -61,26 +61,26 @@ function toggleStyle(activeId) {
     btn.classList.add("bg-gray-200");
   });
 
-//   const activeBtn = document.getElementById(activeId);
-//   activeBtn.classList.remove("bg-gray-200");
-//   activeBtn.classList.add("bg-gray-900", "text-white");
+  const activeBtn = document.getElementById(activeId);
+  activeBtn.classList.remove("bg-gray-200");
+  activeBtn.classList.add("bg-gray-900", "text-white");
 
-//   filterJobs(activeId);
-// }
+  filterJobs(activeId);
+}
 
-// function filterJobs(type) {
-//   jobCards.forEach(card => {
-//     const status = card.dataset.status || "all";
+function filterJobs(type) {
+  jobCards.forEach(card => {
+    const status = card.dataset.status || "all";
 
-//     if (type === "all-filter-btn") {
-//       card.style.display = "flex";
-//     } else if (type === "interview-filter-btn") {
-//       card.style.display = status === "interview" ? "flex" : "none";
-//     } else if (type === "rejected-filter-btn") {
-//       card.style.display = status === "rejected" ? "flex" : "none";
-//     }
-//   });
-// }
+    if (type === "all-filter-btn") {
+      card.style.display = "flex";
+    } else if (type === "interview-filter-btn") {
+      card.style.display = status === "interview" ? "flex" : "none";
+    } else if (type === "rejected-filter-btn") {
+      card.style.display = status === "rejected" ? "flex" : "none";
+    }
+  });
+}
 
 // ================== UPDATE COUNTS ==================
 // function updateCounts() {
