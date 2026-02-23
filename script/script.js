@@ -55,11 +55,11 @@ jobCards.forEach(card => {
 });
 
 // ================== FILTER TABS ==================
-// function toggleStyle(activeId) {
-//   [allBtn, interviewBtn, rejectedBtn].forEach(btn => {
-//     btn.classList.remove("bg-gray-900", "text-white");
-//     btn.classList.add("bg-gray-200");
-//   });
+function toggleStyle(activeId) {
+  [allBtn, interviewBtn, rejectedBtn].forEach(btn => {
+    btn.classList.remove("bg-gray-900", "text-white");
+    btn.classList.add("bg-gray-200");
+  });
 
 //   const activeBtn = document.getElementById(activeId);
 //   activeBtn.classList.remove("bg-gray-200");
