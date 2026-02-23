@@ -16,78 +16,78 @@ updateCounts();
 // ================== CARD LOGIC ==================
 
 
-// jobCards.forEach(card => {
-//   const interviewBtn = card.querySelector("button:nth-child(1)");
-//   const rejectedBtn = card.querySelector("button:nth-child(2)");
-//   const statusBadge = card.querySelector("span");
-//   const deleteBtn = card.querySelector(".fa-trash-can").parentElement;
+jobCards.forEach(card => {
+  const interviewBtn = card.querySelector("button:nth-child(1)");
+  const rejectedBtn = card.querySelector("button:nth-child(2)");
+  const statusBadge = card.querySelector("span");
+  const deleteBtn = card.querySelector(".fa-trash-can").parentElement;
 
 
 
   // INTERVIEW BUTTON
 
-
-
-  // interviewBtn.addEventListener("click", () => {
-  //   card.dataset.status = "interview";
-  //   statusBadge.innerText = "INTERVIEW";
-  //   statusBadge.className =
-  //     "inline-block mt-4 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-md";
-  //   updateCounts();
-  // });
+  interviewBtn.addEventListener("click", () => {
+    card.dataset.status = "interview";
+    statusBadge.innerText = "INTERVIEW";
+    statusBadge.className =
+      "inline-block mt-4 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-md";
+    updateCounts();
+  });
 
 
 
   // REJECTED BUTTON
-  // rejectedBtn.addEventListener("click", () => {
-  //   card.dataset.status = "rejected";
-  //   statusBadge.innerText = "REJECTED";
-  //   statusBadge.className =
-  //     "inline-block mt-4 bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-md";
-  //   updateCounts();
-  // });
+
+  rejectedBtn.addEventListener("click", () => {
+    card.dataset.status = "rejected";
+    statusBadge.innerText = "REJECTED";
+    statusBadge.className =
+      "inline-block mt-4 bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-md";
+    updateCounts();
+  });
 
   // DELETE BUTTON
-//   deleteBtn.addEventListener("click", () => {
-//     card.remove();
-//     updateCounts();
-//   });
-// });
+
+  deleteBtn.addEventListener("click", () => {
+    card.remove();
+    updateCounts();
+  });
+});
 
 // ================== FILTER TABS ==================
-function toggleStyle(activeId) {
-  [allBtn, interviewBtn, rejectedBtn].forEach(btn => {
-    btn.classList.remove("bg-gray-900", "text-white");
-    btn.classList.add("bg-gray-200");
-  });
+// function toggleStyle(activeId) {
+//   [allBtn, interviewBtn, rejectedBtn].forEach(btn => {
+//     btn.classList.remove("bg-gray-900", "text-white");
+//     btn.classList.add("bg-gray-200");
+//   });
 
-  const activeBtn = document.getElementById(activeId);
-  activeBtn.classList.remove("bg-gray-200");
-  activeBtn.classList.add("bg-gray-900", "text-white");
+//   const activeBtn = document.getElementById(activeId);
+//   activeBtn.classList.remove("bg-gray-200");
+//   activeBtn.classList.add("bg-gray-900", "text-white");
 
-  filterJobs(activeId);
-}
+//   filterJobs(activeId);
+// }
 
-function filterJobs(type) {
-  jobCards.forEach(card => {
-    const status = card.dataset.status || "all";
+// function filterJobs(type) {
+//   jobCards.forEach(card => {
+//     const status = card.dataset.status || "all";
 
-    if (type === "all-filter-btn") {
-      card.style.display = "flex";
-    } else if (type === "interview-filter-btn") {
-      card.style.display = status === "interview" ? "flex" : "none";
-    } else if (type === "rejected-filter-btn") {
-      card.style.display = status === "rejected" ? "flex" : "none";
-    }
-  });
-}
+//     if (type === "all-filter-btn") {
+//       card.style.display = "flex";
+//     } else if (type === "interview-filter-btn") {
+//       card.style.display = status === "interview" ? "flex" : "none";
+//     } else if (type === "rejected-filter-btn") {
+//       card.style.display = status === "rejected" ? "flex" : "none";
+//     }
+//   });
+// }
 
 // ================== UPDATE COUNTS ==================
-function updateCounts() {
-  const cards = document.querySelectorAll("#jobs-list > div");
+// function updateCounts() {
+//   const cards = document.querySelectorAll("#jobs-list > div");
 
-  let interviewCount = 0;
-  let rejectedCount = 0;
+//   let interviewCount = 0;
+//   let rejectedCount = 0;
 
   cards.forEach(card => {
     if (card.dataset.status === "interview") interviewCount++;
